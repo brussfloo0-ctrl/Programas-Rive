@@ -1,0 +1,6 @@
+# GRUPO -> lista
+grupo = []
+
+grupo.append(input("Ingresa el grupo: "))
+
+print("Grupo:", grupo)

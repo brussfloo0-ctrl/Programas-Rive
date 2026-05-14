@@ -1,0 +1,9 @@
+#Nombre Do While (While True)
+while True:
+
+    nombre = input("Ingresa tu nombre: ")
+
+    if nombre != "":
+        break
+
+print("Nombre registrado:", nombre)

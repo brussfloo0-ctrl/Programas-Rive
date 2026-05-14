@@ -1,0 +1,113 @@
+#Programa Completo en Ventana
+from tkinter import *
+
+ventana = Tk()
+ventana.title("Datos del Alumno")
+ventana.geometry("500x700")
+
+
+# FUNCION
+def registrar():
+
+    nombre = entry_nombre.get()
+    edad = int(entry_edad.get())
+    sexo = entry_sexo.get()
+    grupo = entry_grupo.get()
+
+    cal1 = float(entry_cal1.get())
+    cal2 = float(entry_cal2.get())
+    cal3 = float(entry_cal3.get())
+
+    # FOR
+    suma = 0
+    for cal in [cal1, cal2, cal3]:
+        suma += cal
+
+    promedio = suma / 3
+
+    # IF
+    if edad >= 18:
+        mayor = "Mayor de edad"
+    else:
+        mayor = "Menor de edad"
+
+    # MATCH (SWITCH)
+    match sexo:
+
+        case "M":
+            sexo_texto = "Masculino"
+
+        case "F":
+            sexo_texto = "Femenino"
+
+        case _:
+            sexo_texto = "No válido"
+
+    # LISTA
+    grupos = []
+    grupos.append(grupo)
+
+    # DICCIONARIO
+    alumno = {
+        "Nombre": nombre,
+        "Edad": edad,
+        "Sexo": sexo_texto,
+        "Grupo": grupo,
+        "Promedio": promedio
+    }
+
+    resultado.config(
+        text=
+        "Nombre: " + nombre +
+        "\nEdad: " + str(edad) +
+        "\n" + mayor +
+        "\nSexo: " + sexo_texto +
+        "\nGrupo: " + grupo +
+        "\nPromedio: " + str(promedio)
+    )
+
+
+# LABELS
+Label(ventana, text="Nombre").pack()
+entry_nombre = Entry(ventana)
+entry_nombre.pack()
+
+Label(ventana, text="Edad").pack()
+entry_edad = Entry(ventana)
+entry_edad.pack()
+
+Label(ventana, text="Sexo (M/F)").pack()
+entry_sexo = Entry(ventana)
+entry_sexo.pack()
+
+Label(ventana, text="Grupo").pack()
+entry_grupo = Entry(ventana)
+entry_grupo.pack()
+
+Label(ventana, text="Calificación 1").pack()
+entry_cal1 = Entry(ventana)
+entry_cal1.pack()
+
+Label(ventana, text="Calificación 2").pack()
+entry_cal2 = Entry(ventana)
+entry_cal2.pack()
+
+Label(ventana, text="Calificación 3").pack()
+entry_cal3 = Entry(ventana)
+entry_cal3.pack()
+
+
+# BOTON
+Button(
+    ventana,
+    text="Registrar Alumno",
+    command=registrar
+).pack()
+
+
+# RESULTADO
+resultado = Label(ventana, text="")
+resultado.pack()
+
+
+ventana.mainloop()

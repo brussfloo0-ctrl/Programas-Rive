@@ -1,0 +1,7 @@
+# CALIFICACION -> diccionario
+calificacion = {}
+
+calificacion["cal1"] = float(input("Ingresa la calificación 1: "))
+calificacion["cal2"] = float(input("Ingresa la calificación 2: "))
+
+print(calificacion)

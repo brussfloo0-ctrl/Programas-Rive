@@ -1,0 +1,7 @@
+#Nombre alumno con if
+nombre = input("Ingresa el nombre: ")
+
+if nombre != "":
+    print("Nombre registrado")
+else:
+    print("Nombre vacío")

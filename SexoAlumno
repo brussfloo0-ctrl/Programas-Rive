@@ -1,0 +1,6 @@
+#Sexo Alumno for
+for i in range(1):
+
+    sexo = input("Ingresa el sexo: ")
+
+print("Sexo registrado")

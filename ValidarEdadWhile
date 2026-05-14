@@ -1,0 +1,7 @@
+#WHile validar edad :)
+edad = -1
+
+while edad < 0:
+    edad = int(input("Ingresa una edad válida: "))
+
+print("Edad registrada:", edad)
